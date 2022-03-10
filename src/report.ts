@@ -1,19 +1,17 @@
-import { Id } from './types'
-
 export interface MenuReport {
-  id: Id
+  id: string
   name: string
   categories: CategoryReport[]
 }
 
 interface CategoryReport {
-  id: Id
+  id: string
   name: string
   products: ProductReport[]
 }
 
 interface ProductReport {
-  id: Id
+  id: string
   title: string
   image: string
   description: string
