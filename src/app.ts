@@ -1,4 +1,4 @@
-import { PrismaClient } from '@prisma/client'
+import { PrismaClient, PrismaPromise } from '@prisma/client'
 import { getMenuId } from './config'
 import { getExternalProducts } from './externalProducts'
 import { MenuReport } from './report'
@@ -13,17 +13,17 @@ export default async function app(): Promise<MenuReport> {
 async function update(): Promise<void> {
   const extProducts = await getExternalProducts()
   const menuId = getMenuId()
-  const updates = extProducts.map(extProduct => {
+  const updates: PrismaPromise<any>[] = extProducts.map(extProduct => {
     const productId = extProduct.getId()
-    const productToCreate = extProduct.getProductToCreate()
+    const productUpdate = extProduct.getProductUpdate()
     const category = extProduct.getCategory()
     return prisma.product.upsert({
       where: {
         id: productId,
       },
-      create: productToCreate,
-      update: {
-        hidden: false,
+      update: productUpdate,
+      create: {
+        ...productUpdate,
         categories: {
           connectOrCreate: {
             where: {
@@ -59,6 +59,13 @@ async function getMenuReport(): Promise<MenuReport> {
             where: {
               hidden: false,
             },
+            select: {
+              id: true,
+              title: true,
+              image: true,
+              description: true,
+              price: true,
+            }
           },
         },
       },   
