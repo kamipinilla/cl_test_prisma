@@ -30,7 +30,7 @@ export class ExternalProduct {
     return this.source.id.toString()
   }
 
-  public getProduct(): Product {
+  public getProductToCreate() {
     const { title, image, description, price } = this.source
     return {
       id: this.getId(),
@@ -39,8 +39,6 @@ export class ExternalProduct {
       image,
       description,
       price,
-
-      hidden: false,
     }
   }
 }

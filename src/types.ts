@@ -4,7 +4,7 @@ export interface IdObject {
 }
 
 export interface Menu extends IdObject {
-  menuName: string
+  name: string
 }
 
 export interface Category extends IdObject {
@@ -19,12 +19,4 @@ export interface Product extends IdObject {
   hidden: boolean
 }
 
-export interface CategoryMenu extends IdObject {
-  menuId: string
-  categoryId: string
-}
-
-export interface CategoryProduct extends IdObject {
-  productId: string
-  categoryId: string
-}
+export type Obj = Record<string, any>
