@@ -79,7 +79,7 @@ async function getMenuReport(): Promise<MenuReport> {
             }
           },
         },
-      },   
+      },
     },
   })
 }
