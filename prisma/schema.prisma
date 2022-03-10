@@ -31,8 +31,8 @@ model Product {
   
   title String
   image String
-  description String
   price Float
+  description String
 
   categories Category[]
 }

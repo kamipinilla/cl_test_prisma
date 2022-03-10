@@ -6,8 +6,8 @@ interface SourceExternalProduct {
 
   title: string
   image: string
-  description: string
   price: number
+  description: string
   rating: {
     rate: number
     count: number
@@ -30,14 +30,14 @@ export class ExternalProduct {
   }
 
   public getProductUpdate() {
-    const { title, image, description, price } = this.source
+    const { title, image, price, description } = this.source
     return {
       id: this.getId(),
 
       title,
       image,
-      description,
       price,
+      description,
 
       hidden: false,
     }

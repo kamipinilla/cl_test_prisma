@@ -74,8 +74,8 @@ async function getMenuReport(): Promise<MenuReport> {
               id: true,
               title: true,
               image: true,
-              description: true,
               price: true,
+              description: true,
             }
           },
         },

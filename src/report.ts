@@ -14,6 +14,6 @@ interface ProductReport {
   id: string
   title: string
   image: string
-  description: string
   price: number
+  description: string
 }
