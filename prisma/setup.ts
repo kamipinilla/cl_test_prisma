@@ -40,6 +40,13 @@ async function setup(): Promise<void> {
                   description: '49 INCH SUPER ULTRAWIDE 32:9 CURVED GAMING MONITOR with dual 27 inch screen side by side QUANTUM DOT (QLED) TECHNOLOGY, HDR support and factory calibration provides stunningly realistic and accurate color and contrast 144HZ HIGH REFRESH RATE and 1ms ultra fast response time work to eliminate motion blur, ghosting, and reduce input lag',
                   price: 999.99,
                   hidden: true,
+                },
+                {
+                  id: '82',
+                  title: 'Samsung Galaxy Watch 4',
+                  image: 'https://fakestoreapi.com/img/81Zt42ioCgL._AC_SX679_.jpg',
+                  description: 'Companion smartwatch to Samsung phones running on Wear OS 3.0',
+                  price: 250,
                 }
               ],
             },

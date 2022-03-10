@@ -43,6 +43,17 @@ async function update(): Promise<void> {
       },
     })
   })
+  const extProductsIds = extProducts.map(extProduct => extProduct.getId())
+  updates.push(prisma.product.updateMany({
+    where: {
+      id: {
+        notIn: extProductsIds,
+      },
+    },
+    data: {
+      hidden: true,
+    },
+  }))
   await prisma.$transaction(updates)
 }
 
