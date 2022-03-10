@@ -1,0 +1,19 @@
+{
+  "name": "clynk",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.ts",
+  "scripts": {
+    "start": "ts-node main.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.26.0",
+    "prisma": "^3.10.0",
+    "ts-node": "^10.6.0",
+    "typescript": "^4.6.2"
+  }
+}
