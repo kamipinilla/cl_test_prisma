@@ -13,7 +13,7 @@ export default async function app(): Promise<MenuReport> {
 async function update(): Promise<void> {
   const extProducts = await getExternalProducts()
   const menuId = getMenuId()
-  const updates: PrismaPromise<any>[] = extProducts.map(extProduct => {
+  const updates: PrismaPromise<unknown>[] = extProducts.map(extProduct => {
     const productId = extProduct.getId()
     const productUpdate = extProduct.getProductUpdate()
     const category = extProduct.getCategory()
